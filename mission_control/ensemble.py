@@ -15,6 +15,15 @@ def has_intersection_skills_membership_function_facotry(mission_skills):
             inters = mission_skills.intersection(robot.skills)
             return True if inters.len > 0 else False
 
+
+def member_to_coordinator(from_: Component, to_: Component):
+    pass
+
+
+def coordinator_to_member():
+    pass
+
+
 def ensemble_factory(id = 'mission_control', membership = None):
     ensemble = Ensemble(
         id = id,
@@ -22,8 +31,9 @@ def ensemble_factory(id = 'mission_control', membership = None):
         member_role = 'Robot',
         membership = membership,
         knowledge_exchange = [
+            # status
             member_to_coordinator(
-                from_member = [],
+                from_member = ['position'],
                 to_coordinator = [],
                 eval  = lambda args : True
             ),
